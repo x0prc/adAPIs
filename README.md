@@ -1,2 +1,2 @@
 # adAPIs
-Proof of Concept demonstrating Secure API Gateway methods.
+Idea : A secure API gateway for modern web applications, focusing on authentication, routing, rate limiting, and logging.
