@@ -2,19 +2,24 @@
   "name": "adapis",
   "version": "1.0.0",
   "description": "Idea : A secure API gateway for modern web applications, focusing on authentication, routing, rate limiting, and logging.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [],
+  "homepage": "https://github.com/x0prc/adapis#readme",
+  "bugs": {
+    "url": "https://github.com/x0prc/adapis/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/x0prc/adapis.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/x0prc/adapis/issues"
+  "author": "x0prc",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/x0prc/adapis#readme"
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  }
 }
