@@ -1,0 +1,49 @@
+name: CI Test Suite
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Set up .env for tests
+        run: |
+          cp .env.example .env
+          echo 'JWT_SECRET=testsecret' >> .env
+          echo 'USER_SERVICE_URL=http://localhost:4001' >> .env
+          echo 'ORDER_SERVICE_URL=http://localhost:4002' >> .env
+          echo 'PORT=3000' >> .env
+          echo 'ALLOWED_ORIGINS=http://localhost:8080' >> .env
+          echo 'RATE_LIMIT_WINDOW=60000' >> .env
+          echo 'RATE_LIMIT_MAX=100' >> .env
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Upload Test Results
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: coverage/
