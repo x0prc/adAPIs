@@ -3,6 +3,8 @@ Idea : A secure API gateway for modern web applications, focusing on authenticat
 
 Name Inspiration : Adapis, like its namesake primate, embodies adaptability, perceptive threat detection, evolutionary foundation, and efficient balance—making it the agile, secure bridge for modern APIs.
 
+## [Additional Documentation](https://x0prc.github.io/notes/Notes/Published-Documentation/Adapis)
+
 ## Features
 
 - JWT authentication for all protected endpoints
